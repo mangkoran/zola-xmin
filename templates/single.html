@@ -1,0 +1,24 @@
+{% include "partials/header.html" %}
+
+<div class="article-meta">
+  <style>
+    me { text-decoration: none; background: #eee; padding: 5px; border-radius: 5px; text-align: center; }
+  </style>
+  <h1><span class="title">
+    <style>me { font-size: 1.1em; }</style>
+    {{ page.title | markdown | safe }}
+  </span></h1>
+
+  <h2 class="author">
+    {% if page.author %} {{ page.author | safe }}
+    {% else %} {{ config.author | safe }}
+    {% endif %}
+  </h2>
+  {% if page.date %}
+  <h2 class="date">{{ page.date | safe }}</h2>
+  {% endif %}
+</div>
+
+<main>{{ page.content | safe }}</main>
+
+{% include "partials/footer.html" %}

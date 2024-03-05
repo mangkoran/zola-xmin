@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {% if page.title %} {{ page.title }}
+      {% elif section.title %} {{ section.title }}
+      {% elif taxonomy.name %} {{ taxonomy.name }}
+      {% endif %} | {{ config.title }}
+    </title>
+    <link rel="stylesheet" href="{{ get_url(path="css/style.css") }}" />
+    <link rel="stylesheet" href="{{ get_url(path="css/fonts.css") }}" />
+    <script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>
+    {% include "partials/head_custom.html" %}
+  </head>
+
+  <body>
+    <nav>
+      <ul class="menu">
+        <style>
+          me { padding: 0; text-align: center; }   
+          me a { text-decoration: none; background: #eee; padding: 5px; border-radius: 5px; }
+          me li { display: inline-block; }
+        </style>
+        {% for site in config.extra.menus.main  %}
+        <li><a href="{{ get_url(path=site.url) }}">{{ site.name }}</a></li>
+        {% endfor %}
+      </ul>
+      <hr/>
+    </nav>

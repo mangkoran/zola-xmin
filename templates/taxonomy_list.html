@@ -1,0 +1,13 @@
+{% include "partials/header.html" %}
+
+{{ taxonomy.name | markdown | safe }}
+
+<ul>
+  {% for term in terms %}
+  <li>
+    <a href="{{ term.permalink }}">{{ term.name | markdown(inline=true) | safe }}</a> ({{ term.page_count }})
+  </li>
+  {% endfor %}
+</ul>
+
+{% include "partials/footer.html" %}

@@ -1,0 +1,7 @@
+    <footer>
+      {% include "partials/foot_custom.html" %}
+      <hr/>
+      {{ config.extra.params.footer | replace(from="{Year}", to=now() | date(format="%Y")) | markdown | safe }}
+    </footer>
+  </body>
+</html>
