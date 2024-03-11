@@ -1,6 +1,7 @@
 +++
 title = "Home"
 template = "list.html"
+page_template = "single.html"
 +++
 
 **XMin** is a simple Zola theme based on the [Hugo theme with the same
