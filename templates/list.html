@@ -2,13 +2,18 @@
 
 {{ section.content | safe }}
 
+{% if section.path == "/" %}
+<hr/>
+<p>Blog posts: </p>
+{% endif %}
+
 <ul>
   {% if section.path == "/" %}
   {% set section = get_section(path="blog/_index.md") %}
   {% endif %}
   {% for page in section.pages %}
   <li>
-    <span class="date">{{ now() | date(format="%Y/%m/%d") }}</span>
+    <span class="date">{{ page.date }}</span>
     <a href="{{ page.permalink }}">{{ page.title | markdown(inline=true) | safe }}</a>
   </li>
   {% endfor %}

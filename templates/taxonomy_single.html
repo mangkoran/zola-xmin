@@ -8,7 +8,7 @@
 <ul>
   {% for page in term.pages %}
   <li>
-    <span class="date">{{ now() | date(format="%Y/%m/%d") }}</span>
+    <span class="date">{{ page.date }}</span>
     <a href="{{ page.permalink }}">{{ page.title | markdown(inline=true) | safe }}</a>
   </li>
   {% endfor %}
