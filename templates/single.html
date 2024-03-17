@@ -11,7 +11,7 @@
 
   <h2 class="author">
     {% if page.author %} {{ page.author | safe }}
-    {% else %} {{ config.author | safe }}
+    {% elif not page.extra.hide_default_author %} {{ config.author | safe }}
     {% endif %}
   </h2>
   {% if page.date %}
