@@ -1,8 +1,13 @@
+@import url("dark.css");
+@import url("light.css");
+
 body {
   max-width: 800px;
   margin: auto;
   padding: 1em;
   line-height: 1.5;
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
 }
 
 /* header and footer areas */
@@ -10,33 +15,49 @@ footer { text-align: center; }
 footer a { text-decoration: none; }
 hr {
   border-style: dashed;
-  color: #ddd;
+  color: var(--md-sys-color-outline-variant);
 }
 
 /* code */
 pre {
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #eee;
+  border: 1px solid var(--md-sys-color-outline-variant);
+  box-shadow: 5px 5px 5px var(--md-sys-color-surface-container-high);
   padding: 1em;
   overflow-x: auto;
 }
-code { background: #f9f9f9; }
+code { background: var(--md-sys-color-surface-container-highest); }
 pre code { background: none; }
 
 /* misc elements */
 img, iframe, video { max-width: 100%; }
 main { hyphens: auto; }
 blockquote {
-  background: #f9f9f9;
-  border-left: 5px solid #ccc;
+  background: var(--md-sys-color-surface-container-highest);
+  border-left: 5px solid var(--md-sys-color-tertiary);
   padding: 3px 1em 3px;
 }
 
 table {
   margin: auto;
-  border-top: 1px solid #666;
-  border-bottom: 1px solid #666;
+  border-top: 1px solid var(--md-sys-color-on-surface);
+  border-bottom: 1px solid var(--md-sys-color-on-surface);
 }
-table thead th { border-bottom: 1px solid #ddd; }
+table thead th { border-bottom: 1px solid var(--md-sys-color-outline-variant); }
 th, td { padding: 5px; }
-thead, tfoot, tr:nth-child(even) { background: #eee; }
+thead, tfoot, tr:nth-child(even) { background: var(--md-sys-color-surface-container-high); }
+
+a,
+a:link {
+  color: var(--md-sys-color-primary);
+}
+
+a:visited {
+  color: var(--md-sys-color-tertiary);
+}
+
+a:focus,
+a:hover,
+a:active {
+  color: var(--md-sys-color-tertiary);
+  text-decoration-style: dashed;
+}
