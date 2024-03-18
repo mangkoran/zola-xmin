@@ -20,8 +20,8 @@
       <ul class="menu">
         <style>
           me { padding: 0; text-align: center; }   
-          me a { text-decoration: none; background: #eee; padding: 5px; border-radius: 5px; }
-          me li { display: inline-block; }
+          me a { text-decoration: none; background: #eee; padding: 5px; border-radius: 5px; line-height: 1.0; }
+          me a, me li { display: inline-block; }
         </style>
         {% for site in config.extra.menus.main  %}
         <li><a href="{{ get_url(path=site.url) }}">{{ site.name }}</a></li>
