@@ -1,17 +1,19 @@
 {% include "partials/header.html" %}
 
-<p>
-  <a href="{{ config.base_url ~ '/' ~ taxonomy.name }}">{{ taxonomy.name | markdown(inline=true) | safe }}</a>
-  > {{ term.name | markdown(inline=true) | safe }}
-</p>
+<main>
+  <p>
+    <a href="{{ config.base_url ~ '/' ~ taxonomy.name }}">{{ taxonomy.name | markdown(inline=true) | safe }}</a>
+    > {{ term.name | markdown(inline=true) | safe }}
+  </p>
 
-<ul>
-  {% for page in term.pages %}
-  <li>
-    <span class="date">{{ page.date }}</span>
-    <a href="{{ page.permalink }}">{{ page.title | markdown(inline=true) | safe }}</a>
-  </li>
-  {% endfor %}
-</ul>
+  <ul>
+    {% for page in term.pages %}
+    <li>
+      <span class="date">{{ page.date }}</span>
+      <a href="{{ page.permalink }}">{{ page.title | markdown(inline=true) | safe }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</main>
 
 {% include "partials/footer.html" %}
