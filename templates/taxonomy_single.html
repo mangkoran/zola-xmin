@@ -1,10 +1,10 @@
 {% include "partials/header.html" %}
 
 <main>
-  <p>
-    <a href="{{ config.base_url ~ '/' ~ taxonomy.name }}">{{ taxonomy.name | markdown(inline=true) | safe }}</a>
-    > {{ term.name | markdown(inline=true) | safe }}
-  </p>
+  <!-- <a href="{{ config.base_url ~ '/' ~ taxonomy.name }}">{{ taxonomy.name | markdown(inline=true) | safe }}</a> -->
+  <h2>
+    {{ term.name | title | markdown(inline=true) | safe }}
+  </h2>
 
   <ul>
     {% for page in term.pages %}
