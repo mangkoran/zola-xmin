@@ -3,7 +3,7 @@ base_url = "https://xmin.mangkoran.com"
 build_search_index = false
 compile_sass = false
 taxonomies = [{ name = "tags" }]
-title = "zola xmin"
+title = "Zola XMin"
 
 [markdown]
 highlight_code = false
