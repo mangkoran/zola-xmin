@@ -4,19 +4,21 @@
   <style>
     me { text-decoration: none; background: var(--md-sys-color-surface-container-high); padding: 5px; border-radius: 5px; text-align: center; }
   </style>
-  <h1><span class="title">
-    <style>me { font-size: 1.1em; }</style>
-    {{ page.title | markdown | safe }}
-  </span></h1>
-
-  <h2 class="author">
+  {% if page.date %}
+  <h4>
+    <style> me { margin: 1.34em 1.34em 0.67em } </style>
     {% if page.author %} {{ page.author | safe }}
     {% elif not page.extra.hide_default_author %} {{ config.author | safe }}
     {% endif %}
-  </h2>
-  {% if page.date %}
-  <h2 class="date">{{ page.date | safe }}</h2>
+     • {{ page.date | safe }}
+  </h4>
   {% endif %}
+  <h1>
+    {% if page.author or not page.extra.hide_default_author %}
+    <style> me { margin: 0em 0.67em 0.67em } </style>
+    {% endif %}
+    {{ page.title | markdown(inline=true) | safe }}
+  </h1>
 </div>
 
 <main>{{ page.content | safe }}</main>
