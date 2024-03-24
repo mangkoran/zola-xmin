@@ -8,6 +8,7 @@ body {
   line-height: 1.5;
   background: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
+  transition: all 250ms ease;
 }
 
 /* header and footer areas */
